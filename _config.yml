@@ -1,0 +1,44 @@
+permalink: /:year/:month/:day/:title.html
+paginate: 5
+markdown: kramdown
+
+#kramdown:
+#  input: GFM
+
+# 作者信息
+author: 
+  name: suemi
+  email: suemi94@qq.com
+  link: http://segmentfault.com/u/suemi
+  weibo: http://weibo.com/u/2186120180
+  github: http://github.com/suemi994
+
+# 站点信息
+title: Suemi's Blog 
+description: Suemi 的个人博客
+url: http://suemi994.github.io
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+gavatar: /public/img/avatar.jpg
+favicon: /public/img/avatar.jpg
+
+#Jiathis分享插件设置
+jiathis: 2002913
+
+#google analytics 设置
+ga:
+  id: UA-58628423-1
+  url: suemi994.github.io
+
+# disqus 设置
+disqus:
+  shortname: suemi
+
+comments:
+  provider: duoshuo
+  duoshuo:
+    short_name: suemi
+
+
+
