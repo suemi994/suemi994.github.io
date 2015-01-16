@@ -2,10 +2,10 @@
 <html>
   {% include head.html %}
   <body>
-
     <div id="header">
       {% include header.html %}
     </div>
+      {% include mobile-bar.html %}
 
     <div id="main">
       <div class="sidebar">
@@ -30,7 +30,5 @@
 
     </div>
   </body>
-  <script src="{{ "/public/lib/smooth-scroll.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/public/lib/common.js" | prepend: site.baseurl }}"></script>
-  {% include googleanalytics.html %}
+  {% include end.html %}
 </html>

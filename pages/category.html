@@ -29,8 +29,10 @@ permalink: /category.html
     <div id="header">
         {% include header.html %}
     </div>
+    {% include mobile-bar.html %}
 
     <div class="sidebar">
+        {% include main-menu.html %}
         <h2 >分类列表</h2>
         <ul>
             {% for category in site.categories %}
@@ -78,4 +80,5 @@ permalink: /category.html
     });
 
   </script>
+  {% include end.html %}
 </html>
