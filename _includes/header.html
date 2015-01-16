@@ -1,5 +1,21 @@
 
-<div class="headbar">
+<style>
+    #mobile-bar {
+        text-align:center;
+        vertical-align:middle;
+    }
+    #mobile-bar .menu-button {
+        width:30%;
+        position:relative;
+        top:30%;
+        border:0;
+    }
+    
+</style>
+<div id="mobile-bar">
+    <button class="menu-button">菜单栏</button>
+</div>
+<div id="header">
     <a id="logo" href="{{ site.baseurl }}/">
         <img src="{{site.gavatar  | prepend: site.baseurl}}" style="border-radius:50%;">
         <span>{{ site.title }}</span>

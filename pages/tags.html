@@ -4,7 +4,7 @@ permalink: /tags.html
 ---
 <!DOCTYPE html>
 <html>
-  {% include phead.html %}
+  {% include head.html %}
   <body>
     <style>
         .list-group span{
@@ -26,13 +26,10 @@ permalink: /tags.html
             left:8%;
         }
     </style>
-    <div id="header">
         {% include header.html %}
-    </div>
-    {% include mobile-bar.html %}
 
     <div class="sidebar">
-        {% include main-menu.html %}
+        {% include mobile-bar.html %}
         <h2 >分类列表</h2>
         <ul>
             {% for tag in site.tags %}
