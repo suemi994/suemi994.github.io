@@ -327,11 +327,11 @@ ul.demo li {
   position: absolute;
   z-index: 10;
   top: 0;
-  left: 60px;
+  left: 5%;
   bottom: 0;
   overflow-y: scroll;
   padding: 2.2em 0;
-  width: 220px;
+  width: 20%;
   margin-right: 20px;
   -webkit-overflow-scrolling: touch;
   border-right: solid 1px;

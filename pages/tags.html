@@ -30,7 +30,7 @@ permalink: /tags.html
 
     <div class="sidebar">
         {% include mobile-bar.html %}
-        <h2 >分类列表</h2>
+        <h2 >标签列表</h2>
         <ul>
             {% for tag in site.tags %}
                 <li class="tab" data="{{tag | first }}">
@@ -56,7 +56,7 @@ permalink: /tags.html
                 </div>
                 {% endfor %}
             </div>
-            <a class="upper" href="#header">
+            <a class="upper" data-scroll href="#header">
               <img src={{ "/public/img/up.jpg" | prepend: site.baseurl}}>
             </a>
             <div class="footer">
