@@ -33,7 +33,7 @@ permalink: /about.html
 
 ###联系方式
 - Email：suemi94@qq.com
-- Wechat: q541253501
+- Wechat: q41253501
 - weibo: suemi逸
 - QQ：541253501
 
