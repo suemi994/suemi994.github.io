@@ -12,16 +12,6 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <script src="{{'/public/lib/jquery.min.js' | prepend:site.baseurl}}"></script>
-  <script>
-  if(window.innerWidth<720){
-      $('.content').css('max-width','100%');
-      $('.sidebar').css('width','220px');
-  }
-  $(window).on('resize',function(){
-      if(this.innerWidth<720) $('.content').css('max-width','100%');
-      else  $('.content').css('max-width','55%');
-  });
-  </script>
   <script src="{{ "/public/lib/highlight/highlight.pack.js" | prepend: site.baseurl}}"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
