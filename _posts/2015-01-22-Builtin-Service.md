@@ -22,39 +22,39 @@ Zeta.js提供了一些十分常见的服务给后端web开发者们使得工作�
 ###渲染字符串
 你需要显式地使用Provider $render来实现字符串的渲染，字符串里也可以包含变量。
 
-```js
+~~~js
 demo.get('/',function($scope,$render){
     $scope.end($render.text('<p></p>'),{
         msg:"hello,world"
     });
 });
 //demo is a module
-```
+~~~
 
 ###渲染文件
 我们暴露出一个简易的函数接口供html或swig文件的渲染。
 
-```js
+~~~js
 demo.get('/',function($scope){
     $scope.render('/index.swig',{
         title:'Welcome'
     })
 });
-```
+~~~
 
 ##Cookie
 Cookie服务在章节工厂里已经提到过，而实际上它也确实是用Factory实现的。
 
 ###提取cookie
 
-```js
+~~~js
 var user=$cookie.val('user');
 //return a cookie named user
-```
+~~~
 
 ###设置cookie
 
-```js
+~~~js
 //reset the value of cookie
 $cookie.val('user',Json.stringfy({name:'bevis'}));
 //initialize the cookie
@@ -77,17 +77,17 @@ demo.get('/',function($scope,$cookie){
     $cookie.write($scope);
     $scope.send('').end();
 });
-```
+~~~
 
 ##表单
 我们使用大名鼎鼎的formidable插件来处理表单提交，无论是post方法提交的json对象还是文件上传的form-data，都可以处理。工厂$form会返回一个formidable中的IncomingForm对象，其余的你可以参照formidable的文档。
 
-```js
+~~~js
 demo.post('/',function($scope,$form){
     .....
 });
 //$form is a IncomingForm object of formidable
-```
+~~~
 
 ##静态服务器
 
@@ -95,21 +95,21 @@ demo.post('/',function($scope,$form){
 
 ###开启服务
 
-```js
+~~~js
 demo.config('public',__dirname+'/public');
 demo.load();
 demo.any('static');
-```
+~~~
 
 举个例子，当你发起对于路径'/img/avatar.jpg'的请求时，客户端将得到文件路径为'/public/img/avatar.jpg'的图像。如果文件不存在的话，如果你设置了的话，你应该会得到一个404。对于子目录的请求也支持，同时你可以省略路径最末端的'/'字符。
 
 ###Index的情况
 静态服务器会自动查找由请求指定的目录下名为index有特定后缀的文件，后缀可以由你设定。目前支持的后缀有html，htm及md三种。设置方法如下。
 
-```js
+~~~js
 demo.config.of('built-in').of('static-server').val('indexFile',['.html','.md']);
 //allow index file with suffix as html or md
 //you get /views/index.html when request for path /views
-```
+~~~
 
 另外，后缀名的优先级同他们在配置数组里的顺序一致，以上文为例，html文件优先于md文件，二者同时存在时会返回html文件。
