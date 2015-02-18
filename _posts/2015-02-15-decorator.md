@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之装饰者
 category: 编程技巧
 tags: 设计模式
-date: 2015-02-1
+date: 2015-02-15
 ---
 
 ### 前言
