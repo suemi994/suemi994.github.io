@@ -5,6 +5,10 @@ title: 锋利的jQuery
 tags: jQuery
 date: 2014-11-25
 ---
+{% include JB/setup %}
+
+* 目录
+{:toc}
 
 #锋利的jQuery
 ------------------------------------------

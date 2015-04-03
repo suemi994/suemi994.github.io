@@ -1,31 +1,5 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-      {% include header.html %}
-
-    <div id="main">
-      <div class="sidebar">
-        {% include sidebar.html  %}
-      </div>
-
-      <div class="content  with-sidebar">
-          {{ content }}
-          {% include share.html %}
-          <div class="comment">
-          {% include duoshuo.html %}
-          </div>
-          <a class="upper" data-scroll href="#header">
-            <img src={{ "/public/img/up.jpg" | prepend: site.baseurl}}>
-          </a>
-
-        <div class="footer">
-          {% include footer.html %}
-        </div>
-
-      </div>
-
-    </div>
-  </body>
-  {% include end.html %}
-</html>
+---
+layout: default
+---
+{% include JB/setup %}
+{% include themes/twitter/post.html %}

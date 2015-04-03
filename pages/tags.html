@@ -1,80 +1,21 @@
 ---
-title: 标签页
-permalink: /tags.html
+layout: page
+title: 标签
+header: Posts By Tag
+group: navigation
+comments: false
 ---
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-    <style>
-        .list-group span{
-            float:right;
-            position:relative;
-            
-        } 
-        .sidebar{
-            position:fixed;
-            top:10%; 
-            overflow-x:hidden;
-            overflow-y:scroll;
-        }
-        .tab-pane h3{
-            margin-bottom:-4%;
-        }
-        .sidebar h2{
-            position:relative;
-            left:8%;
-        }
-    </style>
-        {% include header.html %}
+{% include JB/setup %}
 
-    <div class="sidebar">
-        {% include mobile-bar.html %}
-        <h2 >标签列表</h2>
-        <ul>
-            {% for tag in site.tags %}
-                <li class="tab" data="{{tag | first }}">
-                    <button class="button-large pure-button">{{ tag | first }}</button>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+<ul class="tag-box inline" style="margin-bottom: 20px;">
+  {% assign tags_list = site.tags %}  
+  {% include JB/tags_list %}
+</ul>
 
-    <div id="main">
-        <div class="content with-sidebar">
-            <div class="tab-content">
-                {% for tag in site.tags %}
-                <div class="tab-pane post" id="{{tag[0]}}">
-                    <div class="list-group">
-                        {% for post in tag[1] %}
-                            <a href="{{ post.url | prepend:site.baseurl }}">
-                                <h3>{{post.title}}</h3>
-                                <span>{{post.date | date_to_string}}</span>
-                            </a>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <a class="upper" data-scroll href="#header">
-              <img src={{ "/public/img/up.jpg" | prepend: site.baseurl}}>
-            </a>
-            <div class="footer">
-                {% include footer.html %}
-            </div>
-            </div>
-        </div>
-    </div>
-  </body>
-  <script>
-    $('.tab-pane').css('display','none');
-    $('.tab-content :first').css('display','block');
-    $('.tab').on('click',function(){
-        var cate=$(this).attr('data');
-        $('.tab-pane').css('display','none');
-        $('#'+cate).css('display','block')
-    });
-
-  </script>
-  {% include end.html %}
-</html>
+{% for tag in site.tags %} 
+<h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
+<ul>
+  {% assign pages_list = tag[1] %}  
+  {% include JB/pages_list %}
+</ul>
+{% endfor %}

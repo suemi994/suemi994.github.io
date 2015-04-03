@@ -5,6 +5,10 @@ category: WEB开发
 tags: jQuery
 date: 2014-12-04
 ---
+{% include JB/setup %}
+
+* 目录
+{:toc}
 
 #Jquery的异步机制
 ----------------------------------------------------------

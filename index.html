@@ -1,110 +1,86 @@
 ---
-layout: post
-title: 最新文章
+layout: default
+title: "Suemi's Blog"
+tagline: "下克上"
+description: "人生五十年，如梦亦似幻。有生方有死，壮士何所憾。"
 ---
+{% include JB/setup %}
 
-<style>
-.pag-button {
-  display: inline-block;
-  font-size: 0.8em;
-  color: #42b983;
-  font-weight: 700;
-  background-color: #fff;
-  padding: 8px 14px;
-  border-radius: 9px;
-  border: 1px solid #42b983;
-  transition: all 0.15s ease;
-  margin-right:7%;
-}
-.pag-button:hover {
-  color: #fff;
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
-  background-color: #42b983;
-}
+<!-- Recent Posts  -->
+<section>
+  {% for post in paginator.posts %}
+  <article class="nested">
 
-.post {
-padding: 5px 5px 5px 5px;
-margin-bottom: 0;
-}
+    <header>
+      <h2><a href="{{ post.url }}" title="查看《{{ post.title }}》">{{ post.title }}</a></h2>
+    </header>
 
-.prev{
-left:12%;
-}
-.curr{
-margin-top:1%;
-left:45%;
-}
-.next{
-right: 5%
-}
+    <section>
+      <p>
+        {{ post.content | strip_html | truncate:300 }}
+      </p>
+      <a class="button-link" href="{{ post.url }}" title="查看全文">read more</a>
+    </section>
 
-.readmore{
-padding-top:10px;
-float:right;
-}
+    <footer>
+      <p>
+        发表日期：<a href="{{ site.JB.archive_path }}#{{ post.date | date: '%B-%Y' }}" title="查看此月所有文章">{{ post.date | date: "%d %B %Y" }}</a>，
+        作者：<a href="mailto:{{ site.author.email }}" title="向作者发送邮件">{{ site.author.name }}</a>，
+        类别：<a href="{{ site.JB.categories_path }}#{{ post.category }}-ref" title="查看此类别下的所有文章">{{ post.category }}</a>{% if site.JB.comments.provider == 'duoshuo' %}，
+        评论：<a href="{{ post.url }}#ds-thread" title="查看此文章的评论"><span class="ds-thread-count" data-thread-key="{{ post.title }}" data-count-type="comments"></span></a>{% endif %}
+      </p>
+    </footer>
 
-.excerpt{
-background-color:#F7F7F7;
-padding:10px;
-}
+  </article>
+  {% endfor %}
 
-.pag-contain{
-position: relative;
-padding-bottom: 1%;
-}
+  {% if site.JB.comments.provider == 'duoshuo' %}
+    {% assign duoshuo = 'jsonly' %}
+    {% include JB/comments-providers/duoshuo %}
+  {% endif %}
 
-.pag-contain a{
-position: absolute;
-}
-.pag-contain span{
-position: absolute;
-}
-.pagination{
-margin-top:50px;
-}
+</section>
 
+<!-- Pagination Links -->
+<section class="pagination pagination-centered">
+  <ul>
+    <!-- First Page -->
+    {% if paginator.previous_page %}
+    <li><a href="/index.html">&laquo;&laquo;</a></li>
+    {% else %}
+    <li class="disabled"><a href="#">&laquo;&laquo;</a></li>
+    {% endif %}
 
-
-</style>
-<div class="blog ">
-    {% for post in paginator.posts %}
-        {% if post.url == page.url %}
-            {% else %}
-                <div class="post  clearfix" >
-                    <h2 id="{{post.title}}">
-                        <a href="{{ post.url | prepend: site.baseurl }}" style='color:#2c3e50;font-weight:300;'>
-                        {{post.title}}
-                        </a>
-                    </h2>
-                    <div class='excerpt'>{{ post.content | strip_html | truncatewords:15}}</div>
-                    <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">
-                        Continue Reading
-                    </a>
-
-                </div>
-            {% endif %}
-        {% endfor %}
-
-
-                <div class="pagination buttons pag-contain">
-
-      {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-      <a class="prev pag-button" href="/">Previous</a>
+    <!-- Previous Page -->
+    {% if paginator.previous_page %}
+    <li>
+      {% if paginator.previous_page == 1 %}
+      <a href="/index.html">&laquo;</a>
       {% else %}
-        <a class="prev pag-button" href="/page{{ paginator.previous_page }}">Previous</a>
-        {% endif %}
+      <a href="/page{{ paginator.previous_page }}">&laquo;</a>
       {% endif %}
+    </li>
+    {% else %}
+    <li class="disabled"><a href="#">&laquo;</a></li>
+    {% endif %}
 
-      <span class="curr">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <!-- Current Page -->
+    <li class="active">
+      <span class="page_number ">第 {{ paginator.page }}/{{ paginator.total_pages }} 页</span>
+    </li>
 
+    <!-- Next Page -->
+    {% if paginator.next_page %}
+    <li><a href="/page{{paginator.next_page}}">&raquo;</a></li>
+    {% else %}
+    <li class="disabled"><a href="#">&raquo;</a></li>
+    {% endif %}
 
-      {% if paginator.next_page %}
-        <a class="pag-button next" href="/page{{ paginator.next_page }}">NextPage</a>
-      {% endif %}
-
-
-
-    </div>
-</div>
+    <!-- Last Page -->
+    {% if paginator.next_page %}
+    <li><a href="/page{{ paginator.total_pages }}">&raquo;&raquo;</a></li>
+    {% else %}
+    <li class="disabled"><a href="#">&raquo;&raquo;</a></li>
+    {% endif %}
+  </ul>
+</section>

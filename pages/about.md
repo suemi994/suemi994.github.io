@@ -1,8 +1,9 @@
 ---
-layout: post
-title: 关于
-permalink: /about.html
+layout: page
+title: 自我介绍
+comments: false
 ---
+{% include JB/setup %}
 
 ###基本情况
 - 性别：男
@@ -14,12 +15,11 @@ permalink: /about.html
 - 本科：中国科学技术大学 自动化系
 
 ###关注
-- Web开发，目前主要是node和前端
+- Web开发，目前主要是Node、Flask和前端
 - Machine Learning & Data Mining
-- Image Processing
+- Android Security
 
 ###标签
-- 本科僧
 - 程序猿
 - 单身狗
 - 二次元
@@ -32,9 +32,11 @@ permalink: /about.html
 也希望通过它获得帮助，结识更多的小伙伴。
 
 ###联系方式
-- Email：suemi94@qq.com
+- Email：suemi94@163.com
 - Wechat: q41253501
 - weibo: suemi逸
 - QQ：541253501
+- Google：suemi994
+- Facebook：suemi94
 
 
