@@ -51,6 +51,11 @@ JB :
     google : 
       tracking_id : 'UA-58628423-1'
 
+  sharing:
+    provider: bshare
+    bshare:
+      shortname: suemi
+
 #Jiathis分享插件设置
 jiathis: 2002913
 
