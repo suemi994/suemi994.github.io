@@ -8,6 +8,7 @@
   <!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=7"><![endif]-->
 
   <title>{{ page.title }}</title>
+  <meta property="st:title" content="{{ page.title }}">
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: "," }}">{% endif %}
   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
   <meta name="author" content="{{ site.author.name }}">
