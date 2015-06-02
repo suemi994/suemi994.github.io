@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 从Spring配置说开来
-category: WEB
+category: WEB开发
 tags: java
 date: 2015-06-02
 ---
@@ -222,7 +222,7 @@ wweb.xml规定了有哪些显式的servlet，规定了最顶层的Context环境�
 
 ~~~
 
-### URL分发，
+### URL分发
 这里主要就是控制器的扫描，以及配置模板引擎，以velocity模板为例
 
 ~~~XML
@@ -439,3 +439,5 @@ Spring常用的注解主要有以下几种：
 - @Controller--视图层
 
 尽管这几种注解对应的意义不一样，但它们都有一个共同的作用，那就是让Spring找到并且最终生成对应的Bean。举个例子，我们在Service中使用接口UserDAO，但该接口的实例我们并没有指定使用哪一个，虽然我们写了对应的Impl Class。 通过注解生成Bean，Spring就能够在Service调用该接口的时候从容器里得到正确的实体对象。
+
+最后还想问一个问题，有什么好方法在使用Mybatis的时候也能根据POJO类的定义改变自动更新数据库结构呢？
