@@ -1,6 +1,6 @@
 <a href="#"><i class="icon-fixed-width icon-code"></i> 代码仓库</a>
 <ul>
-  <li><a href="https://github.com/suemi994/SuDroid">SuDroid：在线安卓恶意应用探测系统（开发中）</a></li>
+  <li><a href="https://github.com/suemi994/DroidWatcher">DroidWatcher：安卓恶意应用探测系统</a></li>
   <li><a href="https://github.com/BenBBear/Zeta">Zeta：一个轻量级NodeJS后端框架</a></li>
   <li><a href="https://github.com/suemi994/suMarkdown">SuMarkdown：一个Js写成的轻量级Markdown编辑器</a></li>
   <li><a href="https://github.com/suemi994/JFile">JFile：一个示例性的JQuery文件上传插件</a></li>
