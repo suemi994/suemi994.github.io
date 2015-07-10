@@ -186,14 +186,16 @@ Hibernate对于Collection型的属性，会默认采用一对多映射，采用�
 
 #### 级联方式
 
-级联方式有以下几种
+JPA规定的级联方式有以下几种
 
 - PERSIST 插入时帮你插入
 - MERGE 更新时帮你更新
 - REFRESH 刷新时帮你刷新
-- REMOVE 删除时顺带帮你删了
+- REMOVE 删除时顺带帮你删了,只在一对多映射下起作用
 - DETACH 无视外键依赖直接就可以删除，比如上文如果设置了此选项，可以不管Resume删掉User
 - ALL 以上所有
+
+上述级联只有在使用JPA的方法才会生效，比如session.persist会生效，但session.save就不会。与此同时，hibernate提供了一套自己的Cascade，使用注解@Cascade即可，主要有insert，delete，save_update等，两种级联可以同时使用。
 
 
 #### 动态插入和动态更新
