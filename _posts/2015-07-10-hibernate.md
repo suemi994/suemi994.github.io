@@ -3,7 +3,7 @@ layout: post
 title: Hibernate使用小札
 category: WEB开发
 tags: java
-date: 2015-06-14
+date: 2015-07-10
 ---
 {% include JB/setup %}
 
