@@ -34,8 +34,8 @@ comments: false
 
 ###联系方式
 - Email：suemi94@163.com
-- Wechat: q41253501
-- weibo: suemi逸
+- Wechat: suemi994
+- weibo: suemi994
 - QQ：541253501
 - Google：suemi994
 - Facebook：suemi94
