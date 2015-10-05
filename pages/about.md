@@ -7,17 +7,18 @@ comments: false
 
 ###基本情况
 - 性别：男
-- 年龄：21
+- 年龄：22
 - 状况：单身，求交往中
 
 
 ###学习经历
 - 本科：中国科学技术大学 自动化系
+- 研究生：中国科学院软件研究所 基础软件实验室
 
 ###关注
-- Web开发，目前主要是Node、Flask和前端
-- Machine Learning & Data Mining
-- Android Security
+- Web开发，目前主要是J2EE、SSH、Django
+- Android Development
+- 分布式数据处理、流处理
 
 ###标签
 - 程序猿
