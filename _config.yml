@@ -27,7 +27,7 @@ rss_url: /pages/atom.xml
 JB :
   version : 0.3.0
   BASE_PATH : false
-  ASSET_PATH : false
+  ASSET_PATH : /assets/themes/twitter
   IMAGE_PATH : false
   archive_path: /pages/archive.html
   categories_path : /pages/categories.html
