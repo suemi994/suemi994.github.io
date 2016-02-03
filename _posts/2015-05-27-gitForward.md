@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于Git使用的一点技巧
-category: tools
+category: 工具技巧
 tags: git
 date: 2015-05-27
 ---

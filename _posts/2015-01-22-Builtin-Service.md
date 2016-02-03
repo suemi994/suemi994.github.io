@@ -3,7 +3,7 @@ layout: post
 title: Zeta.JS之内置服务
 date: 2015-01-22
 tag: zeta
-category: Web开发
+category: WEB开发
 ---
 {% include JB/setup %}
 
