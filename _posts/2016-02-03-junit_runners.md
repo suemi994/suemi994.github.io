@@ -62,7 +62,7 @@ public TestClass(Class<?> clazz) {
 
 TestClass的主要功能就是向Runner提供clazz信息以及附带的注解信息，上文的addToAnnotationLists将对应member加入该annotation映射的member列表。下面给一个TestClass的方法列表截图，大家可以感受一下。
 
-
+![TestClass方法列表](/assets/img/20160203-testClass.png)
 
 #### FrameWorkMethod
 
@@ -120,7 +120,7 @@ FrameWorkMethod包装了方法信息以及方法相关的注解以及一些基�
 
 ### 真正的执行单元——Statement
 
-Statement是最小的执行单元，诸如RunAfter、RunWith等功能均是通过嵌套Statement来实现的，下面我们先给出Statement的定义，再给出一个嵌套的例子。
+Statement是最小的执行单元，诸如RunAfter、RunWith等功能均是通过嵌套Statement来实现的，这是一个典型的装饰器模式以增加新功能。下面我们先给出Statement的定义，再给出一个嵌套的例子。
 
 ~~~java
 public abstract class Statement {
@@ -300,7 +300,7 @@ public class InvokeMethod extends Statement {
 
 ### 组合类测试的Runner实现——Suite
 
-Suite是对于ParentRunner的另一子类实现，主要用于多个测试类的情形。Suite自己维护一个runner列表，实现了getChilderen方法，其层次是在上文中提到的runChildren里，这一部分需要取出children节点然后调用runChild方法。我们着重考察suite和BlockJunit4ClassRunner在getChildren和runChild方法上的区别。Suite通过用户传入的runnerBuilder为每个类单独建立runner作为children返回，而后者则返回带Test注解的FrameWorkMethod列表。使用getChildren拿到的runner直接运行run方法。下面我们给出RunnerBuilder的BlockJunit4ClassRunner的runChild最终使用methodBlock方法返回反射得到的statement运行，而Suite则代码。
+Suite是对于ParentRunner的另一子类实现，主要用于多个测试类的情形。Suite自己维护一个runner列表，实现了getChilderen方法，其层次是在上文中提到的runChildren里，这一部分需要取出children节点然后调用runChild方法。我们着重考察suite和BlockJunit4ClassRunner在getChildren和runChild方法上的区别。Suite通过用户传入的runnerBuilder为每个类单独建立runner作为children返回，而后者则返回带Test注解的FrameWorkMethod列表。使用getChildren拿到的runner直接运行run方法。下面我们给出RunnerBuilder是如何为一系列测试类提供一系列对应的Runner，说来也简单，就是使用为单个类建立Runner的方法为每个测试类建立最后组成一个集合。但是此处需要防止递归——this builder will throw an exception if it is requested for another runner for {@code parent} before this call completes（说实话这段如何防止递归我也没看懂，有看懂的兄弟求教）。对于Suite而言，一般就是它维护一个BlockJUnit4ClassRunner列表。
 
 ~~~java
 public abstract class RunnerBuilder {
