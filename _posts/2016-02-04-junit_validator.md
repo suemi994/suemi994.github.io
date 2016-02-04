@@ -3,7 +3,7 @@ layout: post
 title: Junit源码阅读(三)之精致的Validator
 category: 源码阅读
 tags: junit
-date: 2016-02-03
+date: 2016-02-04
 ---
 {% include JB/setup %}
 
