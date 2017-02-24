@@ -1,7 +1,6 @@
 <a href="#"><i class="icon-fixed-width icon-code"></i> 代码仓库</a>
 <ul>
-  <li><a href="https://github.com/suemi994/DroidWatcher">DroidWatcher：安卓恶意应用探测系统</a></li>
+  <li><a href="https://github.com/suemi994/slog">Slog：一个轻量级多线程C++日志库</a></li>
   <li><a href="https://github.com/BenBBear/Zeta">Zeta：一个轻量级NodeJS后端框架</a></li>
-  <li><a href="https://github.com/suemi994/suMarkdown">SuMarkdown：一个Js写成的轻量级Markdown编辑器</a></li>
-  <li><a href="https://github.com/suemi994/JSeed">JSeed：一个使J2EE开发更便捷的StartUp项目（开发中）</a></li>
+  <li><a href="https://github.com/suemi994/PySearch">PySearch：使用ElasticSearch搭建的一个新闻搜索小应用</a></li>
 </ul>
