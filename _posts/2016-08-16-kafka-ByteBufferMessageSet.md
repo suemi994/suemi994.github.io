@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Kafka消息存储之ByteBufferMessageSet
