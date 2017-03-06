@@ -266,7 +266,8 @@ class Pair<T>   {
 
 ### 参考文章
 
-- [**_Java深度历险（五）——Java泛型_**](http://www.infoq.com/cn/articles/cf-java-generics?utm_source=infoq&utm_campaign=user_page&utm_medium=link)
+- [**Java深度历险（五）——Java泛型**](http://www.infoq.com/cn/articles/cf-java-generics?utm_source=infoq&utm_campaign=user_page&utm_medium=link)
 - [Java语法糖（3）：泛型](http://www.importnew.com/22529.html)
-- [**_ java泛型（二）、泛型的内部原理：类型擦除以及类型擦除带来的问题_**](http://blog.csdn.net/lonelyroamer/article/details/7868820)
+- [**java泛型（二）、泛型的内部原理：类型擦除以及类型擦除带来的问题**](http://blog.csdn.net/lonelyroamer/article/details/7868820)
 - [ java泛型:通配符的使用](http://blog.csdn.net/lonelyroamer/article/details/7927212)
+- [**_java泛型详解_**](http://blog.csdn.net/u012152619/article/details/47253811)
